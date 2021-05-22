@@ -1,0 +1,137 @@
+﻿# {[6.19.09.1]}
+# {[6.18.01.1]}
+# {[6.18.08.3]}
+# {[6.18.01.1]}
+# Digistar Script 
+# Created: 08.01.2020
+	system reset
+	
+	eye attitude 0 -37.6 0
+	eye position 0 0 0
+	eye scale 1 1 30
+	stars on
+	
+	script play .\startSticks.ds
+	
+	settingsClass is class type permanent
+	settingsClass attribute timebased bool
+	settingsClass attribute gametime int32
+	settingsClass lock
+	
+	zodiacSettings is settingsClass
+	zodiacSettings timebased false
+	zodiacSettings gametime 100
+	
+	failSound is audioClass
+	failSound FFT on
+	failSound path $Content/User/Produktion_extern/ZodiacMatch/audio/Fail.mp3
+	
+	scoreSound is audioClass
+	scoreSound FFT on
+	scoreSound path $Content/User/Produktion_extern/ZodiacMatch/audio/score.mp3
+	
+	gameWonSound is audioClass
+	gameWonSound FFT on
+	gameWonSound path $Content/User/Produktion_extern/ZodiacMatch/audio/GameWon.mp3
+	
+	backgroundMusic is audioClass
+	backgroundMusic FFT on
+	backgroundMusic path $Content/User/Produktion_extern/ZodiacMatch/audio/ambientBackground.mp3
+	backgroundMusic volume 80
+	backgroundMusic play
+	
+	winmessage is textClass
+	winmessage intensity 0
+	winmessage pos spherical 0 45 100
+	winmessage textScale 3 3
+	winmessage resolution "high"
+	winmessage origin "center"
+	winmessage vOrigin "center"
+	winmessage alignment "center"
+	winmessage text "Das Spiel ist beendet!|Drücke Ⓐ um nochmal zu spielen"
+	scenefixed add winmessage
+	
+	statusmessage is textClass
+	statusmessage intensity 100
+	statusmessage pos spherical 0 9.5 100
+	statusmessage textScale 2 2
+	statusmessage resolution "high"
+	statusmessage origin "center"
+	statusmessage vOrigin "center"
+	statusmessage alignment "center"
+	statusmessage text ""
+	scenefixed add statusmessage
+	
+	xbox0 is xboxClass
+	xbox0 init
+	
+	#xbox0 command 0 "js message gameloop>run"  # Start button on XBox controller
+	xbox0 command 8 "js message script>select" # "A" Button also
+	xbox0 command 9 "js message script>select" # "B"
+	xbox0 command 10 "js message script>select" # "X" Button
+	xbox0 command 11 "js message script>select" # "Y"
+	xbox0 command 4 "js message script>select" # left shoulder
+	xbox0 command 5 "js message script>select" # right shoulder
+	#xbox0 command 0 "js message script>ping0" # start
+	#xbox0 command 1 "js message script>ping1" # back
+	#xbox0 command 2 "js message script>select" # left stick
+	#xbox0 command 3 "js message script>select" # right stick
+
+	
+	# prevent unwanted "drift" in the controller
+	xbox0 lStickDeadband 0.2 0.2
+	xbox0 on
+	
+	cursor is solidModelClass
+	cursor model $Content\Library\Models\Misc\image.x
+	scenefixed add cursor
+	cursor face eye
+	cursor position spherical 1.2 1.2 20 m
+	
+	crosshaircontroller is connectorClass
+	crosshaircontroller target cursor position
+	crosshaircontroller source0 xbox0 lStick.x
+	crosshaircontroller source1 xbox0 lStick.y
+	crosshaircontroller scale0 1
+	crosshaircontroller scale1 0.5
+	crosshaircontroller scale2 0
+	crosshaircontroller function "position spherical Rate"
+	crosshaircontroller on
+	
+	earthRotationController is connectorClass
+	earthRotationController target eye attitude
+	earthRotationController source0 xbox0 rStick.x
+	earthRotationController scale0 -0.25
+	earthRotationController function "attitude cartesian Rate"
+	earthRotationController on
+	
+	green is solidModelClass
+	green model $Content/User/Produktion_extern/ZodiacMatch/models/Green/Green.X
+	green position spherical 0 2.7 1000 m
+	green attitude cartesian 0 0 0
+	# green scale -0.8 -1 -1 m
+	green scale 0.8 1 1 m
+#	green modelTexture size 4
+#	green modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/models/Timepanel/green.bmp
+
+	yellow is solidModelClass
+	yellow model $Content/User/Produktion_extern/ZodiacMatch/models/Yellow/Yellow.X
+	yellow position spherical 0 2.7 1000 m
+	yellow attitude cartesian 180 0 0
+	yellow scale 0.8 1 1 m
+#	yellow modelTexture size 4
+#	yellow modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/models/Timepanel/yellow.bmp
+
+	red is solidModelClass
+	red model $Content/User/Produktion_extern/ZodiacMatch/models/Red/Red.X
+	red position spherical 0 2.7 1000 m
+	red attitude cartesian 180 0 0
+	red scale 0.8 1 1 m
+#	red modelTexture size 4
+#	red modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/models/Timepanel/red.bmp
+	
+	javascript verbose off
++00:00:01.001
+	stars lumScale 4
+	js play .\script.js
+	
