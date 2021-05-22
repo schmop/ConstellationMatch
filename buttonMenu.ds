@@ -1,0 +1,155 @@
+﻿# {[6.19.09.1]}
+	gamemodeButtonSpring is solidModelClass
+	gamemodeButtonSpring position spherical 0 35 20
+	gamemodeButtonSpring model $Content\Library\Models\Misc\image.x
+	gamemodeButtonSpring modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/Media/spring.png
+	scenefixed add gamemodeButtonSpring
+	gamemodeButtonSpring face eye
+
+	gamemodeTextSpring is textClass
+	gamemodeTextSpring intensity 100
+	gamemodeTextSpring pos spherical 0 15 100
+	gamemodeTextSpring textScale 3 3
+	gamemodeTextSpring resolution "high"
+	gamemodeTextSpring origin "center"
+	gamemodeTextSpring vOrigin "center"
+	gamemodeTextSpring alignment "center"
+	gamemodeTextSpring text "Frühling"
+	scenefixed add gamemodeTextSpring
+	
+	gamemodeButtonSummer is solidModelClass
+	gamemodeButtonSummer position spherical 45 35 20
+	gamemodeButtonSummer model $Content\Library\Models\Misc\image.x
+	gamemodeButtonSummer modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/Media/summer.png
+	scenefixed add gamemodeButtonSummer
+	gamemodeButtonSummer face eye
+
+	gamemodeTextSummer is textClass
+	gamemodeTextSummer intensity 100
+	gamemodeTextSummer pos spherical 45 15 100
+	gamemodeTextSummer textScale 3 3
+	gamemodeTextSummer resolution "high"
+	gamemodeTextSummer origin "center"
+	gamemodeTextSummer vOrigin "center"
+	gamemodeTextSummer alignment "center"
+	gamemodeTextSummer text "Sommer"
+	scenefixed add gamemodeTextSummer
+	
+	gamemodeButtonFall is solidModelClass
+	gamemodeButtonFall position spherical 90 35 20
+	gamemodeButtonFall model $Content\Library\Models\Misc\image.x
+	gamemodeButtonFall modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/Media/autumn.png
+	scenefixed add gamemodeButtonFall
+	gamemodeButtonFall face eye
+
+	gamemodeTextFall is textClass
+	gamemodeTextFall intensity 100
+	gamemodeTextFall pos spherical 90 15 100
+	gamemodeTextFall textScale 3 3
+	gamemodeTextFall resolution "high"
+	gamemodeTextFall origin "center"
+	gamemodeTextFall vOrigin "center"
+	gamemodeTextFall alignment "center"
+	gamemodeTextFall text "Herbst"
+	scenefixed add gamemodeTextFall
+	
+	gamemodeButtonWinter is solidModelClass
+	gamemodeButtonWinter position spherical 135 35 20
+	gamemodeButtonWinter model $Content\Library\Models\Misc\image.x
+	gamemodeButtonWinter modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/Media/winter.png
+	scenefixed add gamemodeButtonWinter
+	gamemodeButtonWinter face eye
+
+	gamemodeTextWinter is textClass
+	gamemodeTextWinter intensity 100
+	gamemodeTextWinter pos spherical 135 15 100
+	gamemodeTextWinter textScale 3 3
+	gamemodeTextWinter resolution "high"
+	gamemodeTextWinter origin "center"
+	gamemodeTextWinter vOrigin "center"
+	gamemodeTextWinter alignment "center"
+	gamemodeTextWinter text "Winter"
+	scenefixed add gamemodeTextWinter
+	
+	gamemodeButtonAll is solidModelClass
+	gamemodeButtonAll position spherical 180 38 20
+	gamemodeButtonAll model $Content\Library\Models\Misc\image.x
+	gamemodeButtonAll modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/Media/all.png
+	scenefixed add gamemodeButtonAll
+	gamemodeButtonAll face eye
+
+	gamemodeTextAll is textClass
+	gamemodeTextAll intensity 100
+	gamemodeTextAll pos spherical 180 15 100
+	gamemodeTextAll textScale 3 3
+	gamemodeTextAll resolution "high"
+	gamemodeTextAll origin "center"
+	gamemodeTextAll vOrigin "center"
+	gamemodeTextAll alignment "center"
+	gamemodeTextAll text "Alle|Konstellationen"
+	scenefixed add gamemodeTextAll
+	
+	gamemodeButtonNorth is solidModelClass
+	gamemodeButtonNorth position spherical 225 35 20
+	gamemodeButtonNorth model $Content\Library\Models\Misc\image.x
+	gamemodeButtonNorth modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/Media/north-direction.png
+	scenefixed add gamemodeButtonNorth
+	gamemodeButtonNorth face eye
+
+	gamemodeTextNorth is textClass
+	gamemodeTextNorth intensity 100
+	gamemodeTextNorth pos spherical 225 15 100
+	gamemodeTextNorth textScale 3 3
+	gamemodeTextNorth resolution "high"
+	gamemodeTextNorth origin "center"
+	gamemodeTextNorth vOrigin "center"
+	gamemodeTextNorth alignment "center"
+	gamemodeTextNorth text "Norden"
+	scenefixed add gamemodeTextNorth
+	
+	gamemodeButtonSouth is solidModelClass
+	gamemodeButtonSouth position spherical 270 35 20
+	gamemodeButtonSouth model $Content\Library\Models\Misc\image.x
+	gamemodeButtonSouth modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/Media/south-direction.png
+	scenefixed add gamemodeButtonSouth
+	gamemodeButtonSouth face eye
+
+	gamemodeTextSouth is textClass
+	gamemodeTextSouth intensity 100
+	gamemodeTextSouth pos spherical 270 15 100
+	gamemodeTextSouth textScale 3 3
+	gamemodeTextSouth resolution "high"
+	gamemodeTextSouth origin "center"
+	gamemodeTextSouth vOrigin "center"
+	gamemodeTextSouth alignment "center"
+	gamemodeTextSouth text "Süden"
+	scenefixed add gamemodeTextSouth
+	
+	gamemodeButtonZodiac is solidModelClass
+	gamemodeButtonZodiac position spherical 315 35 20
+	gamemodeButtonZodiac model $Content\Library\Models\Misc\image.x
+	gamemodeButtonZodiac modelTexture 0 $Content/User/Produktion_extern/ZodiacMatch/Media/ZodiacCircle.png
+	scenefixed add gamemodeButtonZodiac
+	gamemodeButtonZodiac face eye
+
+	gamemodeTextZodiac is textClass
+	gamemodeTextZodiac intensity 100
+	gamemodeTextZodiac pos spherical 315 15 100
+	gamemodeTextZodiac textScale 3 3
+	gamemodeTextZodiac resolution "high"
+	gamemodeTextZodiac origin "center"
+	gamemodeTextZodiac vOrigin "center"
+	gamemodeTextZodiac alignment "center"
+	gamemodeTextZodiac text "Tierkreis"
+	scenefixed add gamemodeTextZodiac
+	
+	timelimitText is textClass
+	timelimitText intensity 100
+	timelimitText pos spherical 0 60 100
+	timelimitText textScale 3 3
+	timelimitText resolution "high"
+	timelimitText origin "center"
+	timelimitText vOrigin "center"
+	timelimitText alignment "center"
+	timelimitText text "Kein Zeitlimit"
+	scenefixed add timelimitText
