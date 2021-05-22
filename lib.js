@@ -6,6 +6,15 @@ function deg2rad(deg) {
 	return deg * Math.PI / 180;
 }
 
+function mod(val, base) {
+	var result = val % base;
+	if (result < 0) {
+		result += base;
+	}
+	
+	return result;
+}
+
 function clamp(val, min, max) {
 	return Math.max(Math.min(val, max), min);
 }

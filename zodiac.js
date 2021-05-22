@@ -192,8 +192,9 @@ function getUpperBound() {
 }
 
 function clampCursorElevation() {
+	var EPSILON = 0.001;
 	cursorPosition = Ds.GetObjectAttrUsingRef(cursorPositionRef);
-	if (cursorPosition.y < getLowerBound() || cursorPosition.y > getUpperBound()) {
+	if (cursorPosition.y < getLowerBound() - EPSILON || cursorPosition.y > getUpperBound() + EPSILON) {
 		cursorPosition.y = clamp(cursorPosition.y, getLowerBound(), getUpperBound());
 		cursorPosition.z = zodiacs[zodiacName].sphericalDistance;
 		Ds.SetObjectAttrUsingRef(cursorPositionRef, cursorPosition);

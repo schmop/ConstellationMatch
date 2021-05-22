@@ -11,7 +11,7 @@
 	eye scale 1 1 30
 	stars on
 	
-	script play .\startSticks.ds
+	
 	
 	settingsClass is class type permanent
 	settingsClass attribute timebased bool
@@ -29,10 +29,12 @@
 	scoreSound is audioClass
 	scoreSound FFT on
 	scoreSound path $Content/User/Produktion_extern/ZodiacMatch/audio/score.mp3
+	scoreSound volume 75
 	
 	gameWonSound is audioClass
 	gameWonSound FFT on
 	gameWonSound path $Content/User/Produktion_extern/ZodiacMatch/audio/GameWon.mp3
+	gameWonSound volume 80
 	
 	backgroundMusic is audioClass
 	backgroundMusic FFT on
@@ -50,6 +52,28 @@
 	winmessage alignment "center"
 	winmessage text "Das Spiel ist beendet!|Drücke Ⓐ um nochmal zu spielen"
 	scenefixed add winmessage
+	
+	titelMessage is textClass
+	titelMessage intensity 100
+	titelMessage pos spherical 0 60 100
+	titelMessage textScale 5 5
+	titelMessage resolution "high"
+	titelMessage origin "center"
+	titelMessage vOrigin "center"
+	titelMessage alignment "center"
+	titelMessage text "Constellation Match"
+	scenefixed add titelMessage
+	
+	startMessage is textClass
+	startMessage intensity 100
+	startMessage pos spherical 0 35 100
+	startMessage textScale 3 3
+	startMessage resolution "high"
+	startMessage origin "center"
+	startMessage vOrigin "center"
+	startMessage alignment "center"
+	startMessage text "Institut für Computergraphik|TU Braunschweig|Lars Richard"
+	scenefixed add startMessage
 	
 	statusmessage is textClass
 	statusmessage intensity 100

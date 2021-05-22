@@ -581,6 +581,7 @@ var all = Object.keys(zodiacs);
 var gameModes = {
 	south: {
 		gameset: south,
+		label: "Sternbilder der Südhalbkugel",
 		rotation: {
 			 h: deg2rad(-100),
 			 p: deg2rad(-122),
@@ -589,6 +590,7 @@ var gameModes = {
 	},
 	north: {
 		gameset: north,
+		label: "Sternbilder der Nordhalbkugel",
 		rotation: {
 			 h: deg2rad(18),
 			 p: deg2rad(-45),
@@ -597,6 +599,7 @@ var gameModes = {
 	},
 	winter: {
 		gameset: winterNames,
+		label: "Wintersternbilder",
 		rotation: {
 			 h: deg2rad(18),
 			 p: deg2rad(-45),
@@ -605,6 +608,7 @@ var gameModes = {
 	},
 	summer: {
 		gameset: summerNames,
+		label: "Sommersternbilder",
 		rotation: {
 			 h: deg2rad(112),
 			 p: deg2rad(-14),
@@ -613,6 +617,7 @@ var gameModes = {
 	},
 	fall: {
 		gameset: fallNames,
+		label: "Herbststernbilder",
 		rotation: {
 			 h: deg2rad(40),
 			 p: deg2rad(-80),
@@ -621,6 +626,7 @@ var gameModes = {
 	},
 	spring: {
 		gameset: springNames,
+		label: "Frühlingssternbilder",
 		rotation: {
 			 h: deg2rad(111),
 			 p: deg2rad(42),
@@ -629,6 +635,7 @@ var gameModes = {
 	},
 	zodiac: {
 		gameset: zod,
+		label: "Tierkreiszeichen",
 		rotation: {
 			h: deg2rad(0),
 			p: deg2rad(-38), // wolfsburg
@@ -637,6 +644,7 @@ var gameModes = {
 	},
 	all: {
 		gameset: all,
+		label: "Alle Sternbilder",
 		rotation: {
 			 h: deg2rad(0),
 			 p: deg2rad(-38), // wolfsburg

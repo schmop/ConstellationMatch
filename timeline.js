@@ -61,7 +61,7 @@ function gameStartedAlready() {
 }
 
 /**
- * @return false If the time run out, true if the is left
+ * @return false If time has run out, true if time is left
  */
 function timelineTick() {
 	if (timebased && startTimestamp > 0 && !gameEndScreen) {

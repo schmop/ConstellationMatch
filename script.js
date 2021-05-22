@@ -4,6 +4,7 @@ include(PATH + "polyfill.js");
 include(PATH + "lib.js");
 include(PATH + "zodiac.js");
 include(PATH + "timeline.js");
+include(PATH + "startScreen.js");
 
 var NON_MONOSPACE_FACTOR = 2.5;
 
@@ -53,28 +54,28 @@ function setLookDirection(directionName) {
     // reset eye or the controls will be messed up
 	Ds.SetObjectAttrUsingRef(eyeAttitudeRef, {h: 0, p: 0, r: 0}, slowControllerRef);
 	switch(directionName) {
-	case "north":
+	case "south":
 		lookOffset = 0;
 		Ds.SendStringCommand("earthRotationController source1 xbox0 rStick.y");
 		Ds.SendStringCommand("earthRotationController scale1 0.25");
 		Ds.SendStringCommand("earthRotationController scale2 0");
 		lookingVertical = false;
 		break;
-	case "south":
+	case "north":
 		lookOffset = deg2rad(180);
 		Ds.SendStringCommand("earthRotationController source1 xbox0 rStick.y");
 		Ds.SendStringCommand("earthRotationController scale1 -0.25");
 		Ds.SendStringCommand("earthRotationController scale2 0");
 		lookingVertical = false;
 		break;
-	case "west":
+	case "east":
 		lookOffset = deg2rad(90);
 		Ds.SendStringCommand("earthRotationController source2 xbox0 rStick.y");
 		Ds.SendStringCommand("earthRotationController scale1 0");
 		Ds.SendStringCommand("earthRotationController scale2 -0.25");
 		lookingVertical = true;
 		break;
-	case "east":
+	case "west":
 		lookOffset = deg2rad(270);
 		Ds.SendStringCommand("earthRotationController source2 xbox0 rStick.y");
 		Ds.SendStringCommand("earthRotationController scale1 0");
@@ -236,11 +237,18 @@ function keepBackgroundMusicAlive() {
 	}
 }
 
+function initializeZodiacsAndArts() {
+	Ds.SendStringCommand('script play ' + PATH + 'startSticks.ds');
+	Ds.Wait(1); // SendStringCommand does not wait for the script to finish executing
+}
+
+startScreen();
+
 // startup
+initializeZodiacsAndArts();
 gatherZodiacRefs();
 createTimeline();
 setLookDirection("north");
-selectPlaySet("all");
 resetGame();
 selectRandomZodiac();
 
